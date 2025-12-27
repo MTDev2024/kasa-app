@@ -1,10 +1,18 @@
-// ============================================
-// PAGE ABOUT - KASA
-// ============================================
+// PAGE ABOUT
 
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
-.page-about {
-  // Styles à ajouter
+.about {
+  &__collapses {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+    max-width: 1023px;
+    margin: 20px auto; 
+    
+    @include respond-to('desktop') {
+      margin: 55px auto; 
+    }
+  }
 }
