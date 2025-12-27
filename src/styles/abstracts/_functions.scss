@@ -1,0 +1,23 @@
+// ============================================
+// FONCTIONS SASS - KASA
+// ============================================
+
+@use 'sass:math';
+
+// Supprimer l'unité d'un nombre
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+  @return $number;
+}
+
+// Convertir px en rem
+@function rem($pixels, $base: 16) {
+  @return math.div($pixels, $base) * 1rem;
+}
+
+// Convertir px en em
+@function em($pixels, $base: 16) {
+  @return math.div($pixels, $base) * 1em;
+}

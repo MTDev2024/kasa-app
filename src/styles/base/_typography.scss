@@ -1,0 +1,51 @@
+// ============================================
+// TYPOGRAPHIE - KASA
+// ============================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Import Google Fonts - Montserrat
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+// Titres
+h1, .h1 {
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  font-size: $font-size-h1-mobile;
+  
+  @include respond-to('desktop') {
+    font-size: $font-size-h1-desktop;
+  }
+}
+
+h2, .h2 {
+  font-weight: $font-weight-medium;
+  line-height: $line-height-tight;
+  font-size: $font-size-h2-mobile;
+  
+  @include respond-to('desktop') {
+    font-size: $font-size-h2-desktop;
+  }
+}
+
+// Classes utilitaires
+.text-bold {
+  font-weight: $font-weight-bold;
+}
+
+.text-medium {
+  font-weight: $font-weight-medium;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: $text-primary;
+}
+
+.text-secondary {
+  color: $text-secondary;
+}

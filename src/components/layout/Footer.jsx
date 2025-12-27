@@ -1,4 +1,3 @@
-import "./Footer.css";
 import logo from "../../assets/logo/logo.svg";
 function Footer() {
   return (

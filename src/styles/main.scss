@@ -1,0 +1,35 @@
+// ============================================
+// KASA - FICHIER SASS PRINCIPAL
+// ============================================
+
+// 1. CONFIGURATION
+@use './abstracts/variables' as *;
+@use './abstracts/mixins' as *;
+@use './abstracts/functions' as *;
+
+// 2. BASE
+@use './base/reset';
+@use './base/typography';
+
+// 3. LAYOUT
+@use './layout/header';
+@use './layout/footer';
+@use './layout/container';
+
+// 4. COMPOSANTS UI
+@use './components/banner';
+@use './components/card';
+@use './components/carousel';
+@use './components/collapse';
+@use './components/tag';
+@use './components/rating';
+@use './components/host';
+
+// 5. PAGES
+@use './pages/home';
+@use './pages/about';
+@use './pages/logement';
+@use './pages/error404';
+
+// 6. UTILITAIRES
+@use './utilities/helpers';

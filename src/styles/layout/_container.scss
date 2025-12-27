@@ -1,0 +1,22 @@
+// ============================================
+// CONTAINER - KASA
+// ============================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Conteneur principal
+.container {
+  @include container;
+}
+
+// Wrapper de page (footer toujours en bas)
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  main {
+    flex: 1;
+  }
+}

@@ -1,0 +1,130 @@
+// ============================================
+// VARIABLES SASS - KASA
+// ============================================
+// Valeurs extraites de la maquette Figma
+
+// ==================== COULEURS ====================
+// Couleurs principales
+$color-primary: #FF6060;        // Rouge Kasa
+$color-secondary: #F6F6F6;      // Gris clair backgrounds
+$color-dark: #000000;           // Noir
+$color-white: #FFFFFF;          // Blanc
+$color-star-inactive: #E3E3E3;  // Gris étoiles inactives
+
+// Couleurs de texte
+$text-primary: $color-dark;
+$text-secondary: $color-white;
+
+// ==================== TYPOGRAPHIE ====================
+// Police
+$font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+// Poids de police
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// Tailles de police - DESKTOP
+$font-size-nav-desktop: 24px;
+$font-size-banner-desktop: 48px;
+$font-size-h1-desktop: 288px;      // Page 404
+$font-size-h2-desktop: 36px;       // Titre logement
+$font-size-card-title-desktop: 18px;
+$font-size-collapse-desktop: 18px;
+$font-size-footer-desktop: 24px;
+
+// Tailles de police - MOBILE
+$font-size-nav-mobile: 12px;
+$font-size-banner-mobile: 24px;
+$font-size-h1-mobile: 96px;        // Page 404
+$font-size-h2-mobile: 18px;        // Titre logement
+$font-size-card-title-mobile: 18px;
+$font-size-collapse-mobile: 13px;
+$font-size-footer-mobile: 12px;
+
+// Tailles de police - BASE
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-lg: 24px;
+
+// Hauteur de ligne
+$line-height-tight: 1.2;
+$line-height-base: 1.5;
+
+// ==================== ESPACEMENTS ====================
+// Système d'espacement
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+
+// Espacements spécifiques
+$grid-gap-desktop: 55px;
+$grid-gap-mobile: 20px;
+
+// Banner
+$banner-height-desktop: 223px;
+$banner-height-mobile: 111px;
+
+// Padding
+$padding-banner: 20px;
+$padding-collapse: 18px 20px;
+$padding-header: 40px 0;
+
+// Margins
+$margin-top-banner: 43px;
+
+// ==================== BREAKPOINTS ====================
+$breakpoint-mobile: 375px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// ==================== BORDURES ====================
+// Border-radius - DESKTOP
+$border-radius-card-desktop: 10px;
+$border-radius-banner-desktop: 25px;
+$border-radius-tag-desktop: 10px;
+$border-radius-collapse-desktop: 10px;
+
+// Border-radius - MOBILE
+$border-radius-banner-mobile: 10px;
+$border-radius-tag-mobile: 5px;
+$border-radius-collapse-mobile: 5px;
+
+// Border-radius - GÉNÉRAL
+$border-radius-round: 50%;
+
+// ==================== GRADIENTS & OVERLAYS ====================
+// Gradient cards
+$gradient-card: linear-gradient(
+  180deg,
+  rgba(255, 255, 255, 0) 0%,
+  rgba(10, 10, 10, 0) 42%,
+  rgba(4, 4, 4, 0.205) 99.99%,
+  rgba(0, 0, 0, 0.5) 100%
+);
+
+// Overlay banner
+$overlay-banner: rgba(0, 0, 0, 0.3);
+
+// ==================== TRANSITIONS ====================
+$transition-fast: 0.2s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// ==================== LAYOUT ====================
+$container-desktop: 1240px;
+$container-padding-desktop: 100px;
+$container-padding-mobile: 20px;
+
+// ==================== OMBRES ====================
+$shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+$shadow-card: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+// ==================== Z-INDEX ====================
+$z-index-dropdown: 1000;
+$z-index-modal: 1050;
