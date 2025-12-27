@@ -1,10 +1,51 @@
 // ============================================
-// PAGE ERROR404 - KASA
+// PAGE 404 - KASA
 // ============================================
 
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
-.page-error404 {
-  // Styles à ajouter
+.error404 {
+  @include flex-center;
+  flex-direction: column;
+  padding-top: 140px; // Distance entre header et 404
+  text-align: center;
+  
+  // Titre "404"
+  &__title {
+    font-size: $font-size-h1-mobile; // 96px mobile
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    line-height: 1;
+    margin-bottom: 140px; // Distance entre 404 et Oups
+    
+    @include respond-to('desktop') {
+      font-size: $font-size-h1-desktop; // 288px desktop
+    }
+  }
+  
+  // Message d'erreur
+  &__text {
+    font-size: $font-size-base; // 16px mobile
+    font-weight: $font-weight-medium;
+    color: $color-primary;
+    max-width: 600px;
+    margin-bottom: 140px; // Distance entre Oups et lien
+    
+    @include respond-to('desktop') {
+      font-size: $font-size-lg; // 24px desktop
+    }
+  }
+  
+  // Lien retour
+  &__link {
+    font-size: $font-size-sm; // 14px
+    font-weight: $font-weight-medium;
+    color: $color-dark;
+    text-decoration: underline;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
