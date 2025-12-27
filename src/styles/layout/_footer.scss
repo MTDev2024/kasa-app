@@ -1,10 +1,36 @@
-// ============================================
-// FOOTER - KASA
-// ============================================
+// FOOTER
 
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
 .footer {
-  // Styles à ajouter
+  background-color: $color-dark;
+  color: $color-white; 
+  @include flex-center;
+  flex-direction: column;
+  padding: 66px 0;
+  gap: 28px; 
+  margin-top: auto;
+  
+  &__logo {
+    height: 40px;
+    width: auto;
+  }
+  
+&__text {
+  font-size: $font-size-footer-mobile;
+  font-weight: $font-weight-medium;
+  text-align: center;
+  
+  @include respond-to('desktop') {
+    font-size: $font-size-footer-desktop;
+  }
+}
+
+// Affiche le <br> seulement sur mobile
+&__break {
+  @include respond-to('tablet') {
+    display: none; // Cache sur desktop
+  }
+}
 }

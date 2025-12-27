@@ -1,10 +1,56 @@
-// ============================================
-// HEADER - KASA
-// ============================================
+// HEADER
+
 
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
 .header {
-  // Styles à ajouter
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px; // Largeur max de la maquette
+  margin: 0 auto; // Centre le header
+  padding: 40px $container-padding-mobile;
+  
+  @include respond-to('desktop') {
+    padding: 40px $container-padding-desktop; // 100px left/right
+  }
+  
+  &__logo {
+    height: 47px;
+    width: auto;
+    
+    @include respond-to('tablet') {
+      height: 68px;
+    }
+  }
+  
+  &__nav {
+    display: flex;
+    gap: 57px;
+    
+    @include mq-max($breakpoint-tablet) {
+      gap: 26px;
+    }
+  }
+  
+  &__link {
+    font-size: $font-size-nav-mobile;
+    font-weight: $font-weight-medium;
+    color: $color-dark;
+    text-decoration: none;
+    
+    @include respond-to('desktop') {
+      font-size: $font-size-nav-desktop;
+    }
+    
+    &.active {
+      text-decoration: underline;
+    }
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

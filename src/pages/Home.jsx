@@ -1,13 +1,14 @@
-import Header from "../components/layout/Header";
+import Banner from "../components/ui/Banner";
+import bannerImage from "../assets/images/banner-home.jpg";
 
-function Home() {
+export default function Home() {
   return (
-    <div>
-      <Header />
-      <h1>Bienvenue sur Kasa</h1>
-      <p>Page d'accueil</p>
-    </div>
+    <>
+      <Banner
+        image={bannerImage}
+        text="Chez vous, partout et ailleurs"
+        alt="Paysage de montagne"
+      />
+    </>
   );
 }
-
-export default Home;

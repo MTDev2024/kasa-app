@@ -1,10 +1,43 @@
-// ============================================
-// BANNER - KASA
-// ============================================
+// BANNER
 
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
 .banner {
-  // Styles à ajouter
+  position: relative;
+  height: $banner-height-mobile; // 111px sur mobile
+  border-radius: $border-radius-banner-mobile; // 10px
+  overflow: hidden; 
+  margin-bottom: $margin-top-banner;
+  
+  @include respond-to('desktop') {
+    height: $banner-height-desktop; 
+    border-radius: $border-radius-banner-desktop; // 25px
+  }
+  
+  // Image de fond
+  &__image {
+    @include img-cover;
+  }
+  
+  // Overlay sombre (seulement si texte)
+  &__overlay {
+    @include absolute-full; // Position absolute couvre tout
+    background: $overlay-banner; 
+    @include flex-center; 
+  }
+  
+  // Texte
+  &__text {
+    color: $color-white;
+    font-size: $font-size-banner-mobile; // 24px
+    font-weight: $font-weight-bold; // 700
+    text-align: center;
+    padding: 0 $spacing-lg; 
+    max-width: 733px;
+    
+    @include respond-to('desktop') {
+      font-size: $font-size-banner-desktop; // 48px
+    }
+  }
 }
