@@ -1,10 +1,33 @@
-// ============================================
-// PAGE HOME - KASA
-// ============================================
+// PAGE HOME
+
 
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
-.page-home {
-  // Styles à ajouter
+.gallery {
+  max-width: $container-desktop; // 1240px
+  margin: 0 auto 43px; // Centré, 43px bottom (pas de top, le banner gère)
+  background: $color-secondary; // Fond gris
+  border-radius: 25px;
+  
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: $grid-gap-mobile; // 20px
+  padding: 56px 50px; // Desktop par défaut
+  
+  @include respond-to('tablet') {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: $grid-gap-desktop; // 55px
+  }
+  
+  @include respond-to('desktop') {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+  
+  @include mq-max($breakpoint-tablet) {
+    padding: 0; // Pas de padding mobile
+    border-radius: 0; // Pas de border-radius mobile
+    background: transparent; // Pas de fond gris mobile
+    gap: $grid-gap-mobile; // 20px
+  }
 }

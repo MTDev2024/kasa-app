@@ -9,8 +9,8 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1440px; // Largeur max de la maquette
-  margin: 0 auto; // Centre le header
+  max-width: 1240px; 
+  margin: 0 auto; 
   padding: 40px $container-padding-mobile;
   
   @include respond-to('desktop') {

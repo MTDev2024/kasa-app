@@ -1,18 +1,20 @@
 // BANNER
 
+
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
 .banner {
   position: relative;
-  height: $banner-height-mobile; // 111px sur mobile
+  height: $banner-height-mobile; // 111px mobile
   border-radius: $border-radius-banner-mobile; // 10px
-  overflow: hidden; 
-  margin-bottom: $margin-top-banner;
+  overflow: hidden;
+  margin-bottom: 22px; // Mobile
   
   @include respond-to('desktop') {
-    height: $banner-height-desktop; 
+    height: $banner-height-desktop;
     border-radius: $border-radius-banner-desktop; // 25px
+    margin-bottom: 45px; 
   }
   
   // Image de fond
@@ -20,24 +22,39 @@
     @include img-cover;
   }
   
-  // Overlay sombre (seulement si texte)
+  // Overlay sombre
   &__overlay {
-    @include absolute-full; // Position absolute couvre tout
-    background: $overlay-banner; 
-    @include flex-center; 
+    @include absolute-full;
+    background: $overlay-banner;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; // Mobile : aligné à gauche
+    padding-left: $spacing-lg; // Mobile : 24px
+    
+    @include respond-to('desktop') {
+      justify-content: center; 
+      padding-left: 0; 
+    }
   }
   
-  // Texte
+  
   &__text {
     color: $color-white;
-    font-size: $font-size-banner-mobile; // 24px
-    font-weight: $font-weight-bold; // 700
-    text-align: center;
-    padding: 0 $spacing-lg; 
-    max-width: 733px;
+    font-size: $font-size-banner-mobile; // 24px mobile
+    font-weight: $font-weight-bold;
+    text-align: left; // Mobile : aligné à gauche
     
     @include respond-to('desktop') {
       font-size: $font-size-banner-desktop; // 48px
+      text-align: center; 
+      white-space: nowrap; 
+    }
+  }
+  
+  // Break conditionnel (mobile seulement)
+  &__break {
+    @include respond-to('tablet') {
+      display: none; // Caché à partir de 768px
     }
   }
 }

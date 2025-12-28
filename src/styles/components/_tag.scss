@@ -1,10 +1,19 @@
-// ============================================
-// TAG - KASA
-// ============================================
+// TAG
+
 
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
 .tag {
-  // Styles à ajouter
+  display: inline-block;
+  background: $color-primary; 
+  color: $color-white;
+  font-size: $font-size-sm; // 14px
+  font-weight: $font-weight-bold; // 700
+  border-radius: $border-radius-tag-mobile; // 5px
+  padding: 3px 30px;
+  
+  @include respond-to('desktop') {
+    border-radius: $border-radius-tag-desktop; // 10px
+  }
 }
