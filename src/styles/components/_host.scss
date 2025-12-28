@@ -1,10 +1,40 @@
-// ============================================
-// HOST - KASA
-// ============================================
+// HOST
 
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
 .host {
-  // Styles à ajouter
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.host__name {
+  font-size: 12px; // Mobile
+  font-weight: $font-weight-medium; // 500
+  color: $color-primary; 
+  text-align: right;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  overflow: hidden;
+  
+  @include respond-to('desktop') {
+    font-size: 18px; // Desktop
+  }
+}
+
+.host__picture {
+  width: 32px; // Mobile
+  height: 32px;
+  border-radius: 50%; 
+  object-fit: cover;
+  flex-shrink: 0; // Empêche reduction image
+  
+  @include respond-to('desktop') {
+    width: 64px; // Desktop
+    height: 64px;
+  }
 }
