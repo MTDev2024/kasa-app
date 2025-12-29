@@ -1,10 +1,23 @@
-// ============================================
-// RATING - KASA
-// ============================================
+// RATING
 
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
 .rating {
-  // Styles à ajouter
+  display: flex;
+  gap: 5px; 
+  
+  @include respond-to('desktop') {
+    gap: 10px; 
+  }
+}
+
+.rating__star {
+  width: 13px; 
+  height: 13px;
+  
+  @include respond-to('desktop') {
+    width: 25px; 
+    height: 24px;
+  }
 }
