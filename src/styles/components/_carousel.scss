@@ -1,10 +1,63 @@
-// ============================================
-// CAROUSEL - KASA
-// ============================================
+// CAROUSEL
 
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
 .carousel {
-  // Styles à ajouter
+  position: relative;
+  width: 335px;  
+  height: 255px; 
+  border-radius: 10px;
+  overflow: hidden;
+  
+  @include respond-to('desktop') {
+    width: 1240px;
+    height: 415px;
+    border-radius: 25px;
+  }
+}
+
+.carousel__image {
+  @include img-cover;
+}
+
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  
+  img { 
+    width: 12px;
+    height: 20px;
+    
+    @include respond-to('desktop') {
+      width: 47px;
+      height: 79px;
+    }
+  }
+}
+
+.carousel__btn--prev {
+ left: 25px 
+}
+
+.carousel__btn--next {
+  right: 25px
+}
+.carousel__counter {
+  display: none; //Caché par défaut sur mobile
+  
+  @include respond-to('desktop') {
+    display: block; // Visible en desktop
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+    font-size: 18px;
+    font-weight: $font-weight-medium;
+    color: $color-white;
+  }
 }
