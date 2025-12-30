@@ -17,32 +17,39 @@ export default function Logement() {
 
   return (
     <div className="logement">
-      <div>
-        <div>
-          <Carousel images={logement.pictures} />
-          <h1>{logement.title}</h1>
-          <p>{logement.location}</p>
+      <Carousel images={logement.pictures} />
+
+      <div className="logement__header">
+        <div className="logement__info">
+          <h1 className="logement__title">{logement.title}</h1>
+          <p className="logement__location">{logement.location}</p>
+
+          <div className="logement__tags">
+            {logement.tags.map((tag, index) => (
+              <Tag key={index} text={tag} />
+            ))}
+          </div>
         </div>
-        <div>
-          {logement.tags.map((tag, index) => (
-            <Tag key={index} text={tag} />
-          ))}
+
+        <div className="logement__host-rating">
           <Host name={logement.host.name} picture={logement.host.picture} />
           <Rating value={logement.rating} />
         </div>
       </div>
 
-      <Collapse title="Description">
-        <p>{logement.description}</p>
-      </Collapse>
+      <div className="logement__collapses">
+        <Collapse title="Description">
+          <p>{logement.description}</p>
+        </Collapse>
 
-      <Collapse title="Équipements">
-        <ul>
-          {logement.equipments.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-      </Collapse>
+        <Collapse title="Équipements">
+          <ul>
+            {logement.equipments.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </Collapse>
+      </div>
     </div>
   );
 }
