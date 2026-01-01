@@ -1,6 +1,4 @@
-// ============================================
-// COLLAPSE - KASA
-// ============================================
+// COLLAPSE
 
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
@@ -31,17 +29,21 @@
     color: $color-white;
     
     @include respond-to('desktop') {
-      font-size: $font-size-collapse-desktop; // 18px (tu avais dit 24px dans les variables, à ajuster)
+      font-size: $font-size-collapse-desktop; // 18px 
     }
   }
   
+
+
+  
+
   // Chevron
-  &__chevron {
-    width: 16px;
-    height: 9px;
-    transition: transform $transition-base; // Animation fluide
-    transform: rotate(0deg); // Fermé (chevron vers le haut par défaut)
-    
+ &__chevron {
+  width: 16px;
+  height: 9px;
+  @include transition(transform); 
+  transform: rotate(0deg); 
+
     @include respond-to('desktop') {
       width: 24px;
       height: 13.71px;
