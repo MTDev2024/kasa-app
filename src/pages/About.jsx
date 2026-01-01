@@ -1,6 +1,6 @@
 import Banner from "../components/ui/Banner";
 import Collapse from "../components/ui/Collapse";
-import bannerImage from "../assets/images/banner-home.jpg";
+import bannerImage from "../assets/images/banner-about.png";
 
 export default function About() {
   return (

@@ -1,6 +1,6 @@
 import Banner from "../components/ui/Banner";
 import Card from "../components/ui/Card";
-import bannerImage from "../assets/images/banner-home.jpg";
+import bannerImage from "../assets/images/banner-home.png";
 import logements from "../data/logements.json";
 
 export default function Home() {
