@@ -17,7 +17,12 @@ export default function Logement() {
 
   return (
     <div className="logement">
-      <Carousel images={logement.pictures} />
+      {/* 
+  Le titre est passé au Carousel pour créer des attributs alt accessibles.
+  Format généré : "Titre du logement - Photo X sur Y"
+  (le JSON ne fournit pas de descriptions d'images)
+*/}
+      <Carousel images={logement.pictures} title={logement.title} />
 
       <div className="logement__header">
         <div className="logement__info">

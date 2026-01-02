@@ -1,17 +1,39 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import chevronLeft from "../../assets/icons/chevron-left.svg";
 import chevronRight from "../../assets/icons/chevron-right.svg";
 
-export default function Carousel({ images }) {
+export default function Carousel({ images, title }) {
   // Ici on initialise à l'index 0
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Ici index +1
+  // Navigation clavier (accessibilité)
+  useEffect(() => {
+    // Forme fonctionnelle de setState pour éviter currentIndex dans les dépendances
+    const goNext = () => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    };
+
+    const goPrev = () => {
+      setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
+
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowLeft") goPrev();
+      if (e.key === "ArrowRight") goNext();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    // On retire l'event listener quand le composant n'est plus affiché
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [images.length]);
+
+  // Ici index +1 (pour les boutons)
   const goNext = () => {
     setCurrentIndex((currentIndex + 1) % images.length);
   };
 
-  // Ici index -1
+  // Ici index -1 (pour les boutons)
   const goPrev = () => {
     setCurrentIndex((currentIndex - 1 + images.length) % images.length);
   };
@@ -19,13 +41,15 @@ export default function Carousel({ images }) {
   // Si pas d'image -> on n'affiche rien (return null)
   if (!images || images.length === 0) return null;
 
-  // Là on affiche le carousel
+  // Affichage carousel
   return (
     <div className="carousel">
-      {/* L'image actuelle */}
+      {/* Alt descriptif basé sur le titre du logement
+      TODO: Si le backend fournit des descriptions par image, 
+      adapter pour utiliser images[i].alt au lieu de title */}
       <img
         src={images[currentIndex]}
-        alt={`Slide ${currentIndex + 1}`}
+        alt={`${title} - Photo ${currentIndex + 1} sur ${images.length}`}
         className="carousel__image"
       />
 
@@ -34,16 +58,19 @@ export default function Carousel({ images }) {
         <>
           <button
             onClick={goPrev}
+            aria-label="Image précédente"
             className="carousel__btn carousel__btn--prev"
           >
-            <img src={chevronLeft} alt="Précédent" />
+            {/* Alt vide car le bouton a déjà aria-label */}
+            <img src={chevronLeft} alt="" />
           </button>
 
           <button
             onClick={goNext}
+            aria-label="Image suivante"
             className="carousel__btn carousel__btn--next"
           >
-            <img src={chevronRight} alt="Suivant" />
+            <img src={chevronRight} alt="" />
           </button>
 
           {/* Ici on affiche le compteur */}

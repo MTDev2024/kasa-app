@@ -5,14 +5,15 @@ export default function Rating({ value }) {
   const stars = [1, 2, 3, 4, 5];
 
   return (
-    <div className="rating">
+    // role="img" + aria-label pour que le lecteur d'écran annonce la note globale
+    <div className="rating" role="img" aria-label={`Note : ${value} sur 5`}>
       {/* Boucle sur chaque nombre */}
       {stars.map((position) => (
         // Pour chaque nombre, créer img
         <img
           // Opérateur ternaire -> étoile full ou empty
           src={position <= Number(value) ? starFull : starEmpty}
-          alt="star"
+          alt="" // Alt vide car les étoiles sont décoratives (info dans aria-label parent)
           // Key unique pour React
           key={position}
           className="rating__star"

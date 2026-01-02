@@ -2,10 +2,20 @@ import { Link } from "react-router-dom";
 
 export default function Card({ id, title, cover }) {
   return (
-    <Link to={`/logement/${id}`} className="card">
+    <Link
+      to={`/logement/${id}`}
+      className="card"
+      aria-label={`Voir les détails de ${title}`}
+    >
+      {/* Alt avec titre logement pour décrire image */}
       <img src={cover} alt={title} className="card__image" />
+
       <div className="card__gradient"></div>
-      <h3 className="card__title">{title}</h3>
+
+      {/* aria-hidden -> titre déjà dans aria-label du lien */}
+      <h3 className="card__title" aria-hidden="true">
+        {title}
+      </h3>
     </Link>
   );
 }
